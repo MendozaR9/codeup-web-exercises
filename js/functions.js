@@ -8,11 +8,12 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+
 function sayHello(name){
     return "Hello, " + name;
 }
+//console.log(sayHello(prompt("type in name")))
 
-console.log(sayHello(prompt("type in name")))
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -20,6 +21,9 @@ console.log(sayHello(prompt("type in name")))
  *
  * console.log 'helloMessage' to check your work
  */
+let helloMessage = sayHello(prompt("type in name"));
+console.log(helloMessage);
+
 
 /**
  * TODO:
