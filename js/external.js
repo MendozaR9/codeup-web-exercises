@@ -40,7 +40,7 @@ if(currentamount <= classmax && schedule === true){
         alert("no class for you");
     }*/
 
-let amountbought = prompt("how many items did you buy?");
+/*let amountbought = prompt("how many items did you buy?");
 let minitems = 2;
 let premMember = confirm("are you a premium member?");
 let expire = confirm("is the items expired?");
@@ -49,4 +49,4 @@ if((amountbought > minitems || premMember === true) && expire === false){
 }else{
     alert("you can not buy these items")
 }
-
+*/
