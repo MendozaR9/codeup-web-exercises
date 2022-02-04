@@ -21,8 +21,9 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-let helloMessage = sayHello(prompt("type in name"));
-console.log(helloMessage);
+
+// let helloMessage = sayHello(prompt("type in name"));
+// console.log(helloMessage);
 
 
 /**
@@ -31,6 +32,9 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+let myname = prompt("What is your name?");
+console.log(sayHello(myname));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -53,6 +57,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+
+
 
 /**
  * TODO:
