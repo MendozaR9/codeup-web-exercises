@@ -9,9 +9,9 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-// function sayHello(name){
-//     return "Hello, " + name;
-// }
+function sayHello(name){
+    return "Hello, " + name;
+}
 //console.log(sayHello(prompt("type in name")))
 
 /**
@@ -22,8 +22,8 @@
  * console.log 'helloMessage' to check your work
  */
 
-// let helloMessage = sayHello(prompt("type in name"));
-// console.log(helloMessage);
+let helloMessage = sayHello(prompt("type in name"));
+console.log(helloMessage);
 
 
 /**
@@ -33,8 +33,8 @@
  * console.
  */
 
-// let myname = prompt("What is your name?");
-// console.log(sayHello(myname));
+let myname = prompt("What is your name?");
+console.log(sayHello(myname));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -108,3 +108,8 @@ alert("you should tip $" + calculateTip(prompt("How much do you want to tip?"), 
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function appyDiscount(originalPrice, discountPercent){
+    return originalPrice - (originalPrice * discountPercent);
+}
+
+console.log(appyDiscount(100, .20));
