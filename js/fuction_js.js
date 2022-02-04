@@ -8,13 +8,37 @@
 *       -> showName() should be void function. That is, it should not return a value - only execute code
 *   -> Test to ensure your code is working as expected
 * */
-function getName() {
-    return prompt("What is your name")
+// function getName() {
+//     return prompt("What is your name")
+// }
+//
+// // console.log(getName())
+//
+// function showName(username){
+//     alert("your name is " + username);
+// }
+// showName(getName());
+//
+// function isLowerCase(Letter){
+//     if (Letter.toLowerCase()){
+//         return true
+//     }else{
+//         return false
+//     }
+// }
+// isLowerCase(getName());
+
+function double(n){
+    return (n * 2);
+}
+console.log(double(prompt("Type a number")))
+
+function areIdentical(input1 , input2){
+    if(input1 === input2){
+        return true;
+    }else{
+        return false
+    }
 }
 
-// console.log(getName())
-
-function showName(username){
-    alert("your name is " + username);
-}
-showName(getName());
+console.log(areIdentical(prompt("Type a number"), prompt("Type a number"),))
