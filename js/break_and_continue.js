@@ -1,6 +1,5 @@
 'use strict';
-var breakNumber
-
+var breakNumber;
 function OddBetween1And50() {
     let isodd = false;
     do {
@@ -12,7 +11,7 @@ function OddBetween1And50() {
         }
     } while (!isodd);
     console.log("Number to skip is: " + breakNumber);
-    return breakNumber;
+    console.log("");
 }
 
 function skipsChosinOddNum() {

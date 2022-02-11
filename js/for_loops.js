@@ -19,12 +19,12 @@ function randomOddOrEven(min, max) {
 }
 randomOddOrEven(prompt("Give me a minmum"), prompt("give me a maxmium"));
 
-function numberPyrimid(){
+function numberTree(){
     for (let i = 1; i <= 9; i++) {
-        console.log((i + "").repeat(i));
+        console.log((i.toString()).repeat(i));
     }
 }
-numberPyrimid();
+numberTree();
 
 function minusFive() {
     for (var num = 100; num >= 5; num -= 5) {
