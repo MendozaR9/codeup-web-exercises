@@ -134,7 +134,8 @@ books.forEach(function (book){
         console.log("Title : "+book.title);
         console.log("Author: "+book.author.firstName+" "+book.author.lastName)
 
-    });
+    })}
+)();
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -145,5 +146,3 @@ books.forEach(function (book){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
-})();
