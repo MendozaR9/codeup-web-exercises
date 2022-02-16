@@ -17,20 +17,34 @@ console.log(findAverage(grade));
 // names (an array of strings)
 // date of birth
 // occupation
-let person =[
-    {
-    name:["Robert","Smith"],
-    dateOfBirth: "05/09/1990",
-    occupation: "firefighter"
-    },
+function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailAddress){
+    this.phoneNumber = phoneNumber;
+    this.streetAddress = streetAddress;
+    this.city = city;
+    this.state = state;
+    this.postalCode = postalCode;
+    this.emailAddress = emailAddress;
+}
+function Person(names, occupation, dob, contactInfo) {
+    this.names = names;
+    this.occupation = occupation;
+    this.dob = dob;
+    this.contactInfo = contactInfo;
+}
+//create an object that represents a person contact info
 
-    {
-        name: ["Joe","Swatson"],
-        dateOfBirth: "03/26/1987",
-        occupation: "Police"
-    }
-];
-console.log(person);
-console.log(person[0].name);
-console.log(person[0].dateOfBirth);
-console.log(person[0].occupation);
+
+let person2 = new Person(
+    ["Joe","Swanson"],
+    "Police",
+    "03/26/1987",
+    new ContactInfo(
+    "214.654.2134",
+    "3820 peter rd",
+    "Carrollton",
+    "TX",
+    "75007",
+    "smithrobert@gmail.com"));
+
+console.log(person2);
+
