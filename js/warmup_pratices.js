@@ -48,3 +48,20 @@ let person2 = new Person(
 
 console.log(person2);
 
+function getNames(){
+    let namesArr =[];
+    let hasMoreNames = true;
+    while (hasMoreNames){
+        //getting the names
+        namesArr.push(prompt("Please enter your desired name"));
+        //if they want to get out of the loop
+        hasMoreNames = confirm("Would you like to enter another name?");
+    }
+    return namesArr;
+}
+
+//console.log(getNames());
+
+let person1 = new Person(getNames(),)
+console.log(person1);
+
