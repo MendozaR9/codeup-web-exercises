@@ -7,14 +7,34 @@
 </head>
 <body>
 <form method="POST" action="https://request-inspector.glitch.me/">
+    <section>
     <label for="email">Email</label>
     <input type="text" name="email" id="email">
     <br>
     <label for="password">Password</label>
     <input type="text" name="password" id="password">
     <br>
-    <input type="submit">
-    <textarea name="Bio"></textarea>
+    </section>
+    <textarea name="bio"></textarea>
+    <br>
+    <section id="hearAboutUS">
+        Bill Board<input type="radio" name="hearAboutUs" value="bill"><br>
+        radio advertisement <input type="radio" name="hearAboutUs1" value="radio"><br>
+        internet advertisement<input type="radio" name="hearAboutUs2" value="internet"><br>
+        Other<input type="radio" name="hearAboutUs3" value="other">
+    </section>
+
+    <section>
+        <label for="browser">What Browser do You Use:</label>
+        <select name="browser" id="browser">
+            <option value="chrome">Google Chrome</option>
+            <option value="firefox">Fire Fox</option>
+            <option value="safari">Safari</option>
+            <option value="other">Option</option>
+        </select>
+    </section>
+
+    <button type="submit">Submit the form</button>
 </form>
 
 
