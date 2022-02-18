@@ -2,7 +2,40 @@ h1.fancy-header{
     color: red;
     text-align: center;
     text-decoration: underline;
+
 }
-body{
+#welcome-dynamics{
     background-color: darkgrey;
 }
+body{
+
+    background-image: url("../img/sky.avif");
+    background-repeat: revert;
+}
+
+#values>ul{
+    list-style: circle;
+}
+
+p{
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+#fancy-table >table{
+    background-color: aliceblue;
+}
+#fancy-table>h2{
+    background-color: gold;
+    margin-bottom: 5px;
+}
+#fancy-table{
+    background-color: cornsilk;
+}
+#link:hover{
+    color:blueviolet ;
+}
+#link{
+    text-decoration: none;
+    color: crimson;
+}
+
