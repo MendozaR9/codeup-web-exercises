@@ -3,3 +3,6 @@ h1.fancy-header{
     text-align: center;
     text-decoration: underline;
 }
+body{
+    background-color: darkgrey;
+}
