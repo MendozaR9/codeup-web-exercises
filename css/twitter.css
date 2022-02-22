@@ -70,3 +70,11 @@ a {
     display: inline-block;
     padding: 1.5em;
 }
+/*.profile{*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*    align-items: flex-end;*/
+/*}*/
+.profile-image{
+    /*display: flex;*/
+}
