@@ -35,12 +35,16 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 
 }
 
 section {
     /* enter needed declarations here */
-    display: flex
+    display: flex;
+
 }
 
 
@@ -106,7 +110,9 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
-    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    /*margin: auto;*/
+    flex-grow: 1;
 }
 
 .large-brown-box:nth-of-type(2) {
@@ -130,6 +136,9 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .grey-box {
