@@ -70,11 +70,38 @@ a {
     display: inline-block;
     padding: 1.5em;
 }
-/*.profile{*/
-/*    display: flex;*/
-/*    justify-content: flex-end;*/
-/*    align-items: flex-end;*/
-/*}*/
+.profile{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.profile-header{
+    margin-right: auto;
+
+}
 .profile-image{
-    /*display: flex;*/
+    position: absolute;
+    right: 90%;
+    top: 40%;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+.profile-details{
+    justify-content: flex-start;
+    padding-right: 5%;
+}
+/*might do something with this*/
+.timeline{
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+div.media{
+    background: var(--light-bg);
+    margin-top: 3px;
+}
+h3{
+    margin: 0;
 }
