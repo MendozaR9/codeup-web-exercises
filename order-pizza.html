@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order pizza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand " href="#">Pizza World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search">
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search Stores near you!</button>
+            </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link" href="#">sign up</a>
+        </form>
+    </div>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid d-sm-none d-md-block collapse">
+    <div class="container">
+        <h1 class="display-4">Welcome to Pizza World!</h1>
+    </div>
+</div>
+<h2>Build your own pizza!</h2>
+<!--Nav bar for making pizza-->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-secondary">1</span> Size and Crust</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-secondary">2</span> Cheese and Sauce</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-secondary">3</span> Toppings</a>
+    </li>
+</ul>
+<!--goes in nav-->
+<div class="tab-content" id="myTabContent">
+<!--    Size and Crust-->
+    <div class="card">
+        <div class="card-header bg-primary text-light">
+            Choice your Size and Crust
+        </div>
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Hand Tossed
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="card-header bg-primary text-light">
+                                Garlic Seasoned crust with a rich, buttery taste.
+                            </div>
+                            <div class="input-group-text">
+                                <input type="radio" aria-label="Radio button for following text input" name="size">
+                                Small("10")
+                                <input type="radio" aria-label="Radio button for following text input" name="size">
+                                Medium("12")
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li class="list-group-item">Crispy Thin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--    Cheese and sauce-->
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        .ounuibib..</div>
+<!--    Toppings-->
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        ...</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</body>
+</html>
