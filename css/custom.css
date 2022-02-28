@@ -7,3 +7,6 @@ h1{
     background-color: white;
     opacity: 50%;
 }
+.card-margin{
+    margin: 1em;
+}
