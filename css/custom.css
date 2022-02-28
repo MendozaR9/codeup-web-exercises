@@ -10,3 +10,9 @@ h1{
 .card-margin{
     margin: 1em;
 }
+.lightgray{
+    background-color: rgba(231, 231, 228, 0.93);
+}
+.footerPad{
+    padding: 1em;
+}
