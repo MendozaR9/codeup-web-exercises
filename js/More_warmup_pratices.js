@@ -11,6 +11,7 @@ function removeAll(bugs, removeBugs){
     });
     return filterbugs
 }
+
     // return  bugs.indexOf(removeBugs);
 // should print
 // [
