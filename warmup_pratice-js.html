@@ -6,6 +6,21 @@
     <script src="js/warmup_pratices.js"></script>
 </head>
 <body>
+<ul id="pets">
 
+</ul>
+<script>
+    let pets =['dog' , 'cat', 'goldfish', 'parrot'];
+
+    let petlist = document.getElementById("pets");
+
+        for (var i =0;  i < pets.length; i++){
+            let li =document.createElement("li");
+            li.innerText =pets[i];
+            petlist.appendChild(li)
+
+        }
+
+</script>
 </body>
 </html>
