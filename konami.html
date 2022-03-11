@@ -32,13 +32,15 @@
 //new code that lets you input it even if you messup
             var konamikeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13],
                 started = false,
+                lives = 3,
                 count = 0;
             let key;
             let img = 'img/Contra_(NES_version_screenshot).png';
             let audio = $('audio')[0];
             // let audioTorture = $('audio')[0];
-            $(document).keyup(function (e) {
+            $(document).keydown(function (e) {
                 console.log(e.keyCode)
+                console.log(lives)
                 var reset = function () {
                     started = false;
                     count = 0;
@@ -58,14 +60,18 @@
                         count++;
                     } else {
                         // Incorrect key, restart.
+                        lives--
+                        reset();
+                    }
+                    if (lives === 0){
                         let audioTorture = new Audio('audio/snake.mp3');
                         audioTorture.play();
-                        reset();
                     }
                     if (count == 11) {
                         // Success!
                         alert('you get 30 lives');
-
+                        lives= lives+30
+                        console.log(lives)
                         $('body').css('background-image', 'url("' + img + '")');
                         $('h1').css('color', 'white');
                         audio.play();
