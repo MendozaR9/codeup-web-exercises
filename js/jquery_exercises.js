@@ -4,43 +4,65 @@
 //     // $('#para').css('background-color', 'red');
 //     // $('#para').css('color','blue');
 // });
-$("#unorderList").on('click', function (){
 
-    alert('you just click the unorder list');
+//code from the selectors exercises
+// $("#unorderList").on('click', function (){
+//
+//     alert('you just click the unorder list');
+// })
+//
+// $("h1").on('click', function (){
+//     listoriginal =$(this).text();
+//     alert(listoriginal);
+// })
+// $(document).ready(function (){
+//     $(".codeup").css('border', '1px solid red');
+//     $('li').css('font-size', '20px')
+//     $('li , p , h1').css('background-color', 'yellow')
+// })
+//
+//
+//
+// $('.color').on('click', function (){
+//     $(this).css('color','blue');
+// })
+
+// let listoriginal;
+//
+//
+let orginalcolor;
+$('h1').click(function (){
+    $(this).css('background-color', 'red')
 })
-
-$("#header1").on('click', function (){
-    listoriginal =$(this).text();
-    alert(listoriginal);
+$('p').dblclick(function (){
+    $(this).css('font-size', '18px')
 })
-$(document).ready(function (){
-    $(".codeup").css('border', '1px solid red');
-    $('li').css('font-size', '20px')
-    $('li , p , h1').css('background-color', 'yellow')
-})
-
-
-
-$('.color').on('click', function (){
-    $(this).css('color','blue');
-})
-let listoriginal;
-$('.list').hover(function (){
-    listoriginal =$(this).text();
-    $(this).html('you are hover over me')
+$('li').hover(function (){
+    orginalcolor = $(this).css('color');
+    $(this).css('color', 'red');
 }, function (){
-    $(this).html(listoriginal)
+        $(this).css('color', orginalcolor);
 })
 
 
-//testing jquery
+
+
+
+// //testing jquery
 // $("#para").on("click",function (){
 // //when click on does this
-//     alert('Jquery is working');
+//
 //     $('#para').html("Jquery");
-//     $('#para').css("color", "green")
+//
 // })
-// let orginalcolor;
+// $('.list').hover(function (){
+//     listoriginal =$(this).text();
+//     $(this).html('you are hover over me')
+// }, function (){
+//     $(this).html(listoriginal)
+// })
+//
+
 // $('#para').hover(function (){
 //     //hover in function
 //     //gets the original background-color
