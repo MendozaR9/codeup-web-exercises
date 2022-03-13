@@ -5,10 +5,14 @@
 </head>
 <body>
 <h1>Konami Code</h1>
+<div>lives: <span id="lives">3</span></div>
 <audio>
     <source src="audio/01.%20Metal%20Gear%20Solid%20Main%20Theme.mp3">
     <source id="pop" src="audio/torture.mp3">
 </audio>
+<br>
+<a href="https://www.youtube.com/watch?v=o-YBDTqX_ZU">
+<button>Get more lives :)</button></a>
 <script src="/js/jquery.js"></script>
 <script>
     "use strict";
@@ -44,7 +48,7 @@
                 var reset = function () {
                     started = false;
                     count = 0;
-                    return;
+
                 };
                 key = e.keyCode;
                 // Begin watching if first key in sequence was pressed.
@@ -56,24 +60,32 @@
                 // If we've started, pay attention to key presses, looking for right sequence.
                 if (started) {
 
-                    if (konamikeys[count] == key) {
+                    if (konamikeys[count] == key && lives > 0) {
                         count++;
                     } else {
                         // Incorrect key, restart.
                         lives--
                         reset();
                     }
-                    if (lives === 0){
-                        let audioTorture = new Audio('audio/snake.mp3');
-                        audioTorture.play();
+                    if (lives >=0){
+                        document.getElementById("lives").innerText = lives
                     }
-                    if (count == 11) {
+                    if (lives === 0){
+
+                        let snakeSnakeSnaaaaake = new Audio('audio/snake.mp3');
+                        audio.pause();
+                        snakeSnakeSnaaaaake.play();
+                    }
+                    if (count == 11 && lives > 0) {
                         // Success!
                         alert('you get 30 lives');
                         lives= lives+30
+                        document.getElementById("lives").innerText = lives
                         console.log(lives)
                         $('body').css('background-image', 'url("' + img + '")');
                         $('h1').css('color', 'white');
+                        $('div').css('color', 'white');
+
                         audio.play();
                         reset();
                     }
