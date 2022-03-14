@@ -16,24 +16,7 @@
 <script src="/js/jquery.js"></script>
 <script>
     "use strict";
-//old Code lets you input once and if you mess up u need to refresh the page
-    // var input ='';
-    // var key = '3838404037393739666513'
-    // var img = 'img/Contra_(NES_version_screenshot).png';
-    // $(document).keyup(function(event){
-    //     // console.log(event.keyCode);
-    //         input+= (""+event.keyCode);
-    //         if (input === key){
-    //             alert('You get 30 lives')
-    //             // $('body').css('background-color','blue');
-    //             $('body').css('background-image','url("'+img+'")');
-    //             $('h1').css('color', 'white')
-    //         }
-    //         console.log(input)
-    //     });
-    // code:[38,38,40,40,37,39,37,39,66,65,13]
 
-//new code that lets you input it even if you messup
             var konamikeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13],
                 started = false,
                 lives = 3,
@@ -41,7 +24,7 @@
             let key;
             let img = 'img/Contra_(NES_version_screenshot).png';
             let audio = $('audio')[0];
-            // let audioTorture = $('audio')[0];
+
             $(document).keydown(function (e) {
                 console.log(e.keyCode)
                 console.log(lives)
