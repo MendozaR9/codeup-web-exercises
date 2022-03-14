@@ -9,51 +9,95 @@
 <script src="/js/jquery.js"></script>
 <h1>Frequently ask Questions</h1>
 <dl>
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 
-  <dt>Lorem ipsum dolor.</dt>
-  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
 </dl>
 <a href="#" id="toggle-visibility">Click to toggle Visibility</a>
+
+<h3>Choke Canyon</h3>
+<ul>
+    <li>Lorem ipsum dolor.</li>
+    <li>Lorem ipsum dolor sit.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum.</li>
+</ul>
+
+<h3>Enchanted Rock</h3>
+<ul>
+    <li>Lorem ipsum dolor</li>
+    <li>Lorem ipsum.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor sit</li>
+</ul>
+
+<h3>Big Bend</h3>
+<ul>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor</li>
+    <li>Lorem ipsum.</li>
+    <li>Lorem ipsum dolor sit</li>
+</ul>
+<a href="#toggle-li" id="toggle-li">Click to highlight</a>
 <script>
-  $(document).ready(function (){
+    $(document).ready(function () {
 
-    $('#toggle-visibility').click(function (){
-      $('dd').toggleClass('invisible');
-      if ($('dd').hasClass('invisible')) {
-        $('.invisible').css('visibility', 'hidden')
-      }else {
-        $('dd').css('visibility', 'visible')
-      }
+        $('#toggle-visibility').click(function () {
+            $('dd').toggleClass('invisible');
+            if ($('dd').hasClass('invisible')) {
+                $('.invisible').css('visibility', 'hidden')
+            } else {
+                $('dd').css('visibility', 'visible')
+            }
+        })
+
+        $('#toggle-li').click(function () {
+            $('li').each(function () {
+                $(this).css({
+                    "background-color": "yellow"
+                })
+            })
+        })
+
+      $("h3").click(function (){
+        $(this).next().css({
+          "font-weight": "bold"
+        })
+      })
+
+      $("ul").click(function (){
+        $(this).children().first().css({
+          "color": "blue"
+        })
+      })
+
     })
-
-
-  })
 
 </script>
 </body>
