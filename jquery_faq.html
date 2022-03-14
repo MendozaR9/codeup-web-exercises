@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquary FAQ</title>
+
+</head>
+<body>
+<script src="/js/jquery.js"></script>
+<h1>Frequently ask Questions</h1>
+<dl>
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+
+  <dt>Lorem ipsum dolor.</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repudiandae!</dd>
+</dl>
+<a href="#" id="toggle-visibility">Click to toggle Visibility</a>
+<script>
+  $(document).ready(function (){
+
+    $('#toggle-visibility').click(function (){
+      $('dd').toggleClass('invisible');
+      if ($('dd').hasClass('invisible')) {
+        $('.invisible').css('visibility', 'hidden')
+      }else {
+        $('dd').css('visibility', 'visible')
+      }
+    })
+
+
+  })
+
+</script>
+</body>
+</html>
