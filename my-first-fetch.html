@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+
+<div id="weather"></div>
+<div id="Pokemon"></div>
+
+<script src="js/keys.js"></script>
+<script>
+
+    //doing fetch stuff
+    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&units=imperial&appid="+OWM_key)
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log(data.daily)
+    //     let html ="";
+    //     html+='<ul>'
+    //     for(let i = 0; i < data.daily.length;i++) {
+    //
+    //         let dailyTemp = data.daily[i].temp.day
+    //
+    //         html += '<li>' + dailyTemp + '</li>'
+    //     }
+    //     html +='</ul>';
+    //
+    //     $('#weather').html(html);
+    // });
+
+    //doing more fetch stuff
+    fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        let html = "";
+        let name = data.name
+        let pokedexNum = data.id
+        //gives name of pokemon
+        html += '<h1>'+"Pokemon: #"+pokedexNum+" "+name+'</h1>'
+        let count = 1
+        //Pokemons Type
+        html += '<p>'+name + " types are: ";
+        for (let i =0; i < data.types.length; i++){
+            let type = data.types[i].type.name;
+            console.log(type)
+            html += type +" <br>"
+        }
+
+        //gives the abilities that it has
+        for (let i =0; i < data.abilities.length ;i++){
+            let abilitys = data.abilities[i].ability.name;
+            html += name +" "+ count +" ablity is: "+ abilitys +"<br>"
+            count++
+        }
+
+        //What game that pokemon appears in up till gen 5
+        html+= '<h2>'+'Which Game does '+ name+ " appeared in"+"</h2>"
+        html+= '<ul>'
+        for (let i =0; i < data.game_indices.length; i++){
+            let game = data.game_indices[i].version.name;
+            html+= '<li>'+game+'</li>'
+        }
+        html+= '</ul>'
+
+        $('#Pokemon').html(html)
+    })
+
+
+
+</script>
+
+</body>
+</html>
