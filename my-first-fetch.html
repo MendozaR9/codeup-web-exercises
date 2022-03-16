@@ -41,19 +41,26 @@ Pokemon:
     // });
 
 
-    function name() {
+    function getname() {
         let pokemonName
         pokemonName = document.querySelector("#namePokemon").value.toLowerCase()
+        // pokemonName = 'mewtwo'
         console.log(pokemonName)
+        nameofPokemon = `${pokemonName}/`
         return pokemonName
     }
 
     let submit = document.querySelector('#submit');
-    submit.addEventListener('click', name)
+    submit.addEventListener('click', getname)
+
+    console.log(submit)
+    var api = 'https://pokeapi.co/api/v2/pokemon/'
+    var nameofPokemon = 'pikachu/'
+    var apiurl =api+nameofPokemon
 
 
     //doing more fetch stuff
-    fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
+    fetch(apiurl)
         .then(response => response.json())
         .then(data => {
 
@@ -65,8 +72,10 @@ Pokemon:
             //gives name of pokemon
             html += '<h1>' + "Pokemon: #" + pokedexNum + " " + name + '</h1>'
             let count = 1
+
             //sprites
-            html += '<section class="row"><div class="col-6 d-flex justify-content-around"> <img class="border border-danger" src="' + data.sprites.front_default + '"> <img class="border border-danger" src="' + data.sprites.back_default + '"> </div>';
+            html += '<section class="row" style="width: 100%"><div class="col-6 d-flex justify-content-around"> <img class="border border-danger" src="' + data.sprites.front_default
+            html+= '"> <img class="border border-danger" src="' + data.sprites.back_default + '"> </div>';
             //Pokemons Type
             html += '<p class="col-4">' + name + " type: ";
             for (let i = 0; i < data.types.length; i++) {
