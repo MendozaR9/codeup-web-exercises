@@ -6,9 +6,14 @@
     <script src="js/jquery.js"></script>
 </head>
 <body>
+Pokemon:
+<input  placeholder="type pokemon name" id="namePokemon">
+<button id="submit">submit</button>
 
 <div id="weather"></div>
 <div id="Pokemon"></div>
+
+
 
 <script src="js/keys.js"></script>
 <script>
@@ -31,11 +36,25 @@
     //     $('#weather').html(html);
     // });
 
+
+    function name(){
+        let pokemonName
+        pokemonName = document.querySelector("#namePokemon").value.toLowerCase()
+        console.log(pokemonName)
+        return pokemonName
+    }
+
+let submit = document.querySelector('#submit');
+submit.addEventListener('click',name)
+
+
     //doing more fetch stuff
     fetch("https://pokeapi.co/api/v2/pokemon/pikachu/")
     .then(response => response.json())
     .then(data => {
+
         console.log(data)
+
         let html = "";
         let name = data.name
         let pokedexNum = data.id
@@ -68,6 +87,7 @@
 
         $('#Pokemon').html(html)
     })
+
 
 
 
