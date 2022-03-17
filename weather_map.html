@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weather map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="js/keys.js"></script>
+    <script src="js/weather_map.js"></script>
+    <link rel="stylesheet" href="css/weather_map.css">
+
+</head>
+<body style="background-color: #cbffcd">
+<div style="background-color: #2989fa" class="row"><h1 class="header1 col-6">Weather App</h1>
+    <section id="location" class="text-end col-6">kbhb</section>
+</div>
+
+<div style="background-color: #0fb784">
+<h2 class="text-center">Weather for next 5 Days</h2>
+<div id="weather" style="padding: 2rem"></div>
+</div>
+<div style="height: 1rem"></div>
+<div id="map" style="height: 100%; width: 100%"></div>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script>
+    mapboxgl.accessToken = mapBox_key;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [Number(lon), Number(lat)]
+    });
+    console.log(Number(lon))
+</script>
+</body>
+</html>
