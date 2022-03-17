@@ -42,11 +42,21 @@ $('#submit').click(function (e){
     lat = $('#lat').val()
     console.log(lon)
     console.log(lat)
-    mylocation()
-    getWeatherData()
-    map();
+    if (Number(lon)&&Number(lat)){
+        mylocation()
+        getWeatherData()
+        map();
+        makemaker(lon,lat)
+    }
 })
 
+//make marker
+function makemaker(lon,lat) {
+    return new mapboxgl.Marker()
+        .setLngLat([lon, lat])
+        .addTo(map);
+
+}
 //Getting Map
 function map() {
     mapboxgl.accessToken = mapBox_key;
