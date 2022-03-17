@@ -52,7 +52,7 @@ $('#submit').click(function (e){
 
 //make marker
 function makemaker(lon,lat) {
-    return new mapboxgl.Marker()
+    var marker = new mapboxgl.Marker()
         .setLngLat([lon, lat])
         .addTo(map);
 

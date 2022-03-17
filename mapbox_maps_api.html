@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Restaurant</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+    <script src="js/keys.js"></script>
+    <script src="js/jquery.js"></script>
+
+</head>
+<body>
+
+<h1> My Favorite Restaurant!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<button id="restaurant">Go To restaurant</button>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!--geocode js-->
+<script src="js/geocode_utills.js"></script>
+<!-- Custom JS -->
+<script>
+    let startlon =-97.0781;
+    let startlat = 32.9343;
+
+    let rest1lon = -97.084090
+    let rest1lat = 32.924995;
+    let rest1 = "P.F Chang's";
+
+    let rest2lon =-97.086650;
+    let rest2lat =32.926645;
+    let rest2 ="In-N-Out"
+
+    let rest3lon=-97.086081;
+    let rest3lat =32.928973;
+    let rest3= "Ferrari's Italian villa"
+
+
+    let map =createmap(startlon, startlat);
+    let marker1 = createmarker(rest1lon, rest1lat);
+    let popup1 = createpopup(startlon, startlat, rest1);
+
+    let marker2 = createmarker(rest2lon, rest2lat);
+    let popup2 = createpopup(startlon, startlat, rest2);
+
+    let marker3 = createmarker(rest3lon, rest3lat);
+    let popup3 = createpopup(startlon, startlat, rest3);
+
+    marker1.setPopup(popup1);
+    marker2.setPopup(popup2);
+    marker3.setPopup(popup3);
+
+
+    function createmap(lon, lat) {
+        mapboxgl.accessToken = mapBox_key;
+        return  new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 5,
+            center: [lon, lat]
+        });
+    }
+    function createmarker(lon, lat) {
+        return  new mapboxgl.Marker()
+            .setLngLat([lon, lat])
+            .addTo(map);
+    }
+
+    function createpopup(lon, lat, restaurant) {
+        return  new mapboxgl.Popup()
+            .setLngLat([lon, lat])
+            .setHTML(`<p>${restaurant}</p>`)
+
+    }
+
+    $('#restaurant').click(function () {
+        geocode("650 W State Hwy 114, Grapevine, TX 76051", mapBox_key).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(15);
+        });
+    })
+</script>
+</body>
+</html>
