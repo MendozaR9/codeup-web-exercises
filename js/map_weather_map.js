@@ -47,6 +47,9 @@ function setGeocoderEventListener() {
         /*We need to ensure marker/popup variables hoisted at the top actual *have* a value
         * Otherwise, calling a remove() method on a non-existent object will result in a runtime error
         * */
+        let newlat = e.result.geometry.coordinates[1];
+        let newlon =e.result.geometry.coordinates[0]
+
         console.log(e)
         if (marker) {
             marker.remove();
@@ -58,37 +61,21 @@ function setGeocoderEventListener() {
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
         marker = getMarker(e.result.geometry.coordinates);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+        mylocation(e.result.place_name);
+        getWeatherData(newlon, newlat);
+
     });
 }
 
-
-
-
-
-
-
-
 //showing location
-function mylocation() {
+function mylocation(location) {
     let head1 = "";
-    head1 += `Longitude: ${lon} Latitude: ${lat}`;
-    console.log(head1)
+    head1 += `${location}`;
     $('#location').html(head1)
 }
 
 
-// let map = createmap(lon,lat);
-// //get user input
-$('#submit').click(function (e){
-    e.preventDefault();
-    lon = $('#lon').val()
-    lat = $('#lat').val()
-    console.log(lon)
-    console.log(lat)
-    mylocation()
-    getWeatherData()
 
-})
 
 
 

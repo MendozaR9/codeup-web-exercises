@@ -1,7 +1,7 @@
 
 
 //Getting Weather Data
-function getWeatherData() {
+function getWeatherData(lon, lat) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${OWM_key}`)
         .then(response => response.json())
         .then(data => {

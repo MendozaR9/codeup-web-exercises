@@ -13,27 +13,27 @@
 
 </head>
 <body>
-<div style="background-color: #2989fa;width: 101.2% " class="row"><h1 class="header1 col-6">Weather App</h1>
-    <section id="location" class="text-end col-6 align-self-center" style=" color: white; padding:0"></section>
+<div style="background-color: #2989fa;width: 100% " class="row m-0"><h1 class="header1 col-6">Weather App</h1>
+    <section id="location" class="text-end col-5 align-self-center" style=" color: white; padding:0"></section>
+    <div class="col-1"></div>
 </div>
 <!--weather-->
 <div style="background-color: #0fb784">
-    <div>
-        <input type="text" name="longitude" id="lon" placeholder="longitude">
-        <input type="text" name="latitude" id="lat" placeholder="latitude">
-        <button id="submit">submit</button>
-    </div>
+
 <h2 class="text-center">Weather for the next 5 Days</h2>
-<div id="weather" style="padding: 2rem">
+<div id="weather" style="padding: 0 1rem">
     <div class="text-center">There is Nothing Here</div>
 </div>
 </div>
 <!--map-->
 <div style="height: 1rem"></div>
+<section class="d-flex justify-content-center" style="padding-bottom: .5rem">
 <div id="map"></div>
+</section>
 
-<!--mapbox and geocode-->
-<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
+
+
+<!--mapbox and geocode js-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
 <script src="js/geocode_utills.js"></script>
