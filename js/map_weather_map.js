@@ -1,6 +1,73 @@
 let lat = '32.7767';
 let lon ='-96.7970';
 
+mapboxgl.accessToken= mapBox_key;
+let map;
+let geocoder;
+let marker;
+let popup;
+init();
+setGeocoderEventListener()
+
+function init(){
+    //make the mapbox
+    map = new mapboxgl.Map({
+        container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [lon, lat], // starting position [lng, lat]
+            zoom: 5 // starting zoom
+    });
+
+    // makes the geocoder
+    geocoder = new MapboxGeocoder({
+        accessToken: mapBox_key,
+        mapboxgl: mapboxgl,
+        marker: false
+    });
+
+    map.addControl(geocoder);
+
+}
+function getMarker(coordinates){
+    return new mapboxgl.Marker()
+        .setLngLat(coordinates)
+        .addTo(map);
+}
+
+function  getPopup(description, coordinates){
+    return new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(`<p>${description}</p>`)
+        .addTo(map);
+}
+
+
+function setGeocoderEventListener() {
+    geocoder.on("result", function (e) {
+        /*We need to ensure marker/popup variables hoisted at the top actual *have* a value
+        * Otherwise, calling a remove() method on a non-existent object will result in a runtime error
+        * */
+        console.log(e)
+        if (marker) {
+            marker.remove();
+        }
+        if (popup) {
+            popup.remove();
+        }
+
+        /*Finally, set the hoisted marker/popup variables to new respective objects*/
+        marker = getMarker(e.result.geometry.coordinates);
+        popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+    });
+}
+
+
+
+
+
+
+
+
 //showing location
 function mylocation() {
     let head1 = "";
@@ -9,9 +76,9 @@ function mylocation() {
     $('#location').html(head1)
 }
 
-//get user input
-let map = createmap(lon,lat);
 
+// let map = createmap(lon,lat);
+// //get user input
 $('#submit').click(function (e){
     e.preventDefault();
     lon = $('#lon').val()
@@ -20,37 +87,9 @@ $('#submit').click(function (e){
     console.log(lat)
     mylocation()
     getWeatherData()
-    let maker = makemaker(Number(lon),Number(lat))
-
-    geocode("650 W State Hwy 114, Grapevine, TX 76051", mapBox_key).then(function(result) {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(20);
-    });
 
 })
 
-
-
-
-//Creating a Map
-function createmap(lon, lat) {
-    mapboxgl.accessToken = mapBox_key;
-    return  new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [Number(lon), Number(lat)], // starting position [lng, lat]
-        zoom: 5 // starting zoom
-    });
-}
-
-//make marker
-function makemaker(lon,lat) {
-    return  new mapboxgl.Marker()
-        .setLngLat([lon, lat])
-        .addTo(map);
-
-}
 
 
 
