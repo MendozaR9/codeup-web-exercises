@@ -1,5 +1,4 @@
-let lat = '32.7767';
-let lon ='-96.7970';
+
 
 //Getting Weather Data
 function getWeatherData() {
@@ -26,47 +25,4 @@ function getWeatherData() {
             $('#weather').html(html);
         });
 }
-
-//showing location
-function mylocation() {
-    let head1 = "";
-    head1 += `Longitude: ${lon} Latitude: ${lat}`;
-    console.log(head1)
-    $('#location').html(head1)
-}
-
-//get user input
-$('#submit').click(function (e){
-    e.preventDefault();
-    lon = $('#lon').val()
-    lat = $('#lat').val()
-    console.log(lon)
-    console.log(lat)
-    if (Number(lon)&&Number(lat)){
-        mylocation()
-        getWeatherData()
-        map();
-        makemaker(lon,lat)
-    }
-})
-
-//make marker
-function makemaker(lon,lat) {
-    var marker = new mapboxgl.Marker()
-        .setLngLat([lon, lat])
-        .addTo(map);
-
-}
-//Getting Map
-function map() {
-    mapboxgl.accessToken = mapBox_key;
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [Number(lon), Number(lat)], // starting position [lng, lat]
-        zoom: 9 // starting zoom
-    });
-}
-
-
 
