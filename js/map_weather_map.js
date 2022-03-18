@@ -8,6 +8,7 @@ let marker;
 let popup;
 init();
 setGeocoderEventListener()
+// getWeatherData(lon,lat) //set default
 
 function init(){
     //make the mapbox
@@ -28,12 +29,25 @@ function init(){
     map.addControl(geocoder);
 
 }
+//make marker
 function getMarker(coordinates){
-    return new mapboxgl.Marker()
+    return new mapboxgl.Marker({
+        draggable: true,
+    })
         .setLngLat(coordinates)
         .addTo(map);
 }
 
+function onDragEnd() {
+    const lngLat = marker.getLngLat();
+    console.log(lngLat)
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+}
+
+
+
+//get popup
 function  getPopup(description, coordinates){
     return new mapboxgl.Popup()
         .setLngLat(coordinates)
@@ -41,7 +55,7 @@ function  getPopup(description, coordinates){
         .addTo(map);
 }
 
-
+//listen for result
 function setGeocoderEventListener() {
     geocoder.on("result", function (e) {
         /*We need to ensure marker/popup variables hoisted at the top actual *have* a value
@@ -63,6 +77,7 @@ function setGeocoderEventListener() {
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
         mylocation(e.result.place_name);
         getWeatherData(newlon, newlat);
+        marker.on('dragend', onDragEnd);
 
     });
 }

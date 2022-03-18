@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>weather map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/jquery.js"></script>
@@ -22,18 +23,22 @@
 
 <h2 class="text-center">Weather for the next 5 Days</h2>
 <div id="weather" style="padding: 0 1rem">
-    <div class="text-center">There is Nothing Here</div>
+    <div class="text-center">
+        <img src="img/weather_load.gif" alt="loading screen of weather types" style="width: 10rem; border-radius: 20px">
+    </div>
 </div>
 </div>
 <!--map-->
 <div style="height: 1rem"></div>
 <section class="d-flex justify-content-center" style="padding-bottom: .5rem">
 <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
 </section>
 
 
 
 <!--mapbox and geocode js-->
+
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
 <script src="js/geocode_utills.js"></script>
@@ -46,6 +51,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 <!--custom js-->
+
 <script src="js/weather_map.js"></script>
 <script src="js/map_weather_map.js"></script>
 
