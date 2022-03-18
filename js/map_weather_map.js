@@ -38,11 +38,13 @@ function getMarker(coordinates){
         .addTo(map);
 }
 
+//drag event
 function onDragEnd() {
     const lngLat = marker.getLngLat();
-    console.log(lngLat)
     coordinates.style.display = 'block';
     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    // console.log(lngLat.lat)
+    // getWeatherData(lngLat.lon, lngLat.lat);
 }
 
 
@@ -62,7 +64,7 @@ function setGeocoderEventListener() {
         * Otherwise, calling a remove() method on a non-existent object will result in a runtime error
         * */
         let newlat = e.result.geometry.coordinates[1];
-        let newlon =e.result.geometry.coordinates[0]
+        let newlon =e.result.geometry.coordinates[0];
 
         console.log(e)
         if (marker) {
@@ -74,9 +76,11 @@ function setGeocoderEventListener() {
 
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
         marker = getMarker(e.result.geometry.coordinates);
-        popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+        // popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
         mylocation(e.result.place_name);
         getWeatherData(newlon, newlat);
+        onDragEnd();
+        // console.log(onDragEnd())
         marker.on('dragend', onDragEnd);
 
     });
