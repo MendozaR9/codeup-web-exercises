@@ -19,8 +19,9 @@
     <div class="col-1"></div>
 </div>
 <!--weather-->
-<div style="background-color: #0fb784">
+<div class="weather-holder">
 
+        <div id="geocoder" class="geocoder "></div>
 <h2 class="text-center">Weather for the next 5 Days</h2>
 <div id="weather" style="padding: 0 1rem">
     <div class="text-center">
@@ -31,8 +32,9 @@
 <!--map-->
 <div style="height: 1rem"></div>
 <section class="d-flex justify-content-center" style="padding-bottom: .5rem">
-<div id="map"></div>
-    <pre id="coordinates" class="coordinates"></pre>
+
+<div id="map" class="d-none d-md-block"></div>
+    <pre id="coordinates" class="coordinates d-none d-md-block"></pre>
 </section>
 
 

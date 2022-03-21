@@ -18,7 +18,8 @@ function init(){
         container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [lon, lat], // starting position [lng, lat]
-            zoom: 5 // starting zoom
+            zoom: 5, // starting zoom
+
     });
 
     // makes the geocoder
@@ -28,7 +29,8 @@ function init(){
         marker: false
     });
 
-    map.addControl(geocoder);
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    // map.addControl(geocoder);
 
 }
 //make marker

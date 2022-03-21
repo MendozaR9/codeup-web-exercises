@@ -8,7 +8,8 @@ h2{
     text-decoration: #2858a4 underline;
 }
 body{
-    background-color: #cbffcd
+    background-color: #cbffcd;
+
 }
 #map{
     width: 80%;
@@ -18,7 +19,7 @@ body{
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     position: absolute;
-    bottom: 30px;
+    bottom: 0px;
     left: 10%;
     padding: 5px 10px;
     margin: 0;
@@ -26,4 +27,12 @@ body{
     line-height: 18px;
     border-radius: 3px;
     display: none;
+}
+#geocoder{
+    width: 50%;
+    height: 50%;
+    padding-top: .5rem;
+}
+.weather-holder{
+    background-color: #0fb784;
 }
