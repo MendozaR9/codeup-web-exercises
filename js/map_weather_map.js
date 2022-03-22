@@ -52,17 +52,16 @@ function onDragEnd() {
 
     getWeatherData(lng, lat);
     console.log(lngLat);
-
 }
 
 
 //get popup
-function  getPopup(description, coordinates){
-    return new mapboxgl.Popup()
-        .setLngLat(coordinates)
-        .setHTML(`<p>${description}</p>`)
-        .addTo(map);
-}
+// function  getPopup(description, coordinates){
+//     return new mapboxgl.Popup()
+//         .setLngLat(coordinates)
+//         .setHTML(`<p>${description}</p>`)
+//         .addTo(map);
+// }
 
 //listen for result
 function setGeocoderEventListener() {
@@ -89,10 +88,7 @@ function setGeocoderEventListener() {
         getWeatherData(newlon, newlat,);
         onDragEnd();
         marker.on('dragend', onDragEnd);
-
-
     });
-
 }
 
 //showing location
@@ -101,11 +97,11 @@ function mylocation(location) {
     head1 += `${location}`;
     $('#location').html(head1)
 }
+//comic sans
 $('#sans').dblclick(function (){
     console.log('hello')
     $('body').css({
         "font-family": '"Comic Sans MS", "Comic Sans", cursive',
-
     })
 
 })

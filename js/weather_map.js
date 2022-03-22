@@ -16,7 +16,8 @@ function getWeatherData(lon, lat,) {
 <section class="text-center my-2">${myDate}
 <!--                <img src="http://openweathermap.org/img/w/${data.daily[i].weather[0].main}.png">-->
                 </section> 
-                Temp: ${dailyTemp} F<hr>
+                Temp: ${dailyTemp} F<br>
+                 ${data.daily[i].weather[0].main}<hr>
                 Humidity: ${data.daily[i].humidity}<hr> 
                 Wind: ${data.daily[i].wind_speed}
                 </div>`
