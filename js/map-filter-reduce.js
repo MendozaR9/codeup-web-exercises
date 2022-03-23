@@ -66,3 +66,14 @@ let usernames = users.reduce((total, people)=>{
     return (total + people.name +" ");
 },"")
 // console.log(usernames)
+
+//Bonus
+let languages = users.reduce((listOfLanguages, user)=>{
+    user.languages.forEach(function (lang){
+        if(!listOfLanguages .includes(lang)){
+            listOfLanguages.push(lang)
+        }
+    })
+    return listOfLanguages
+},[])
+console.log(languages)
