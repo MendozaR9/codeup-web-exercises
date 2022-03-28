@@ -49,86 +49,89 @@ Pokemon:
     //     nameofPokemon = `${pokemonName}/`
     //     return pokemonName
     // }
-    let getpokemonName = document.querySelector('#namePokemon').value;
-    let submit = document.querySelector('#submit').addEventListener('click', getname)
-
-    async function getname(){
-        nameofPokemon = getpokemonName
-        console.log(nameofPokemon)
-        let results = await apiurl
-        console.log(results)
-    }
-
+    // let getpokemonName = document.querySelector('#namePokemon').value;
+    // let submit = document.querySelector('#submit').addEventListener('click', getname)
+    //
+    // async function getname(){
+    //     nameofPokemon = getpokemonName
+    //     console.log(nameofPokemon)
+    //     let results = await apiurl
+    //     console.log(results)
+    // }
+    $('#submit').click(function (){
+        let newpokemonname = document.querySelector('#namePokemon').value;
+        console.log(newpokemonname)
+        nameofPokemon = newpokemonname
+        init()
+    })
 
 
     var api = 'https://pokeapi.co/api/v2/pokemon/'
-    var nameofPokemon = 'mewtwo/'
-    var apiurl =api+nameofPokemon
+    var nameofPokemon = 'pikachu'
+    var apiurl =api+nameofPokemon+'/'
 
 
     //doing more fetch stuff
     fetch(apiurl)
         .then(response => response.json())
         .then(data => {
-
+int()
             console.log(data)
+            function int() {
+                let html = "";
+                let name = data.name
+                let pokedexNum = data.id
+                //gives name of pokemon
+                html += '<h1>' + "Pokemon: #" + pokedexNum + " " + name + '</h1>'
+                let count = 1
 
-            let html = "";
-            let name = data.name
-            let pokedexNum = data.id
-            //gives name of pokemon
-            html += '<h1>' + "Pokemon: #" + pokedexNum + " " + name + '</h1>'
-            let count = 1
+                //sprites
+                html += '<section class="row" style="width: 100%"><div class="col-6 d-flex justify-content-around"> <img class="border border-danger" src="' + data.sprites.front_default
+                html += '"> <img class="border border-danger" src="' + data.sprites.back_default + '"> </div>';
 
-            //sprites
-            html += '<section class="row" style="width: 100%"><div class="col-6 d-flex justify-content-around"> <img class="border border-danger" src="' + data.sprites.front_default
-            html+= '"> <img class="border border-danger" src="' + data.sprites.back_default + '"> </div>';
+                //Pokemons Type
+                html += '<p class="col-4">' + name + " type: ";
+                for (let i = 0; i < data.types.length; i++) {
+                    let type = data.types[i].type.name;
+                    console.log(type)
+                    html += type + " <br>"
+                }
 
-            //Pokemons Type
-            html += '<p class="col-4">' + name + " type: ";
-            for (let i = 0; i < data.types.length; i++) {
-                let type = data.types[i].type.name;
-                console.log(type)
-                html += type + " <br>"
+                //gives the abilities that it has
+                for (let i = 0; i < data.abilities.length; i++) {
+                    let abilitys = data.abilities[i].ability.name;
+                    html += name + " " + count + " ablity is: " + abilitys + "<br>"
+                    count++
+                }
+                html += "</p></section>"
+
+                //stats
+                html += "<h2 class='text-center'>" + name + " stats</h2>"
+                html += "<div class='text-center' id='stats'> hp: " + data.stats[0].base_stat + "<br>"
+                html += "Attack: " + data.stats[1].base_stat + "<br>"
+                html += "Defense: " + data.stats[2].base_stat + "<br>"
+                html += "Sp.Attack: " + data.stats[3].base_stat + "<br>"
+                html += "Sp.Defense: " + data.stats[4].base_stat + "<br>"
+                html += "Speed: " + data.stats[5].base_stat + "</div>"
+
+
+                //What game that pokemon appears in up till gen 5
+                html += '<h2>' + 'Which Game does ' + name + " appeared in" + "</h2>"
+                html += '<ul>'
+                for (let i = 0; i < data.game_indices.length; i++) {
+                    let game = data.game_indices[i].version.name;
+                    html += '<li>' + game + '</li>'
+                }
+                html += '</ul>'
+
+                $('#Pokemon').html(html)
+                $('img').css('background-color', 'white');
+                $('#stats').css('background-color', 'rgba(253,253,253,0.7)')
+                $('body').css({
+                    'background-color': '#56cb46'
+                });
             }
-
-            //gives the abilities that it has
-            for (let i = 0; i < data.abilities.length; i++) {
-                let abilitys = data.abilities[i].ability.name;
-                html += name + " " + count + " ablity is: " + abilitys + "<br>"
-                count++
-            }
-            html += "</p></section>"
-
-            //stats
-            html+= "<h2 class='text-center'>"+name+" stats</h2>"
-            html+="<div class='text-center' id='stats'> hp: "+ data.stats[0].base_stat+"<br>"
-            html+="Attack: "+ data.stats[1].base_stat+"<br>"
-            html+="Defense: "+ data.stats[2].base_stat+"<br>"
-            html+="Sp.Attack: "+ data.stats[3].base_stat+"<br>"
-            html+="Sp.Defense: "+ data.stats[4].base_stat+"<br>"
-            html+="Speed: "+ data.stats[5].base_stat+"</div>"
-
-
-
-
-            //What game that pokemon appears in up till gen 5
-            html += '<h2>' + 'Which Game does ' + name + " appeared in" + "</h2>"
-            html += '<ul>'
-            for (let i = 0; i < data.game_indices.length; i++) {
-                let game = data.game_indices[i].version.name;
-                html += '<li>' + game + '</li>'
-            }
-            html += '</ul>'
-
-            $('#Pokemon').html(html)
-            $('img').css('background-color', 'white');
-            $('#stats').css('background-color', 'rgba(253,253,253,0.7)')
-            $('body').css({
-                'background-color': '#56cb46'
-            });
         })
-
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
