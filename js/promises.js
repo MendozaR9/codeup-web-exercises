@@ -1,6 +1,6 @@
 getuserData()
 function getuserData() {
-    fetch(`https://api.github.com/users/MendozaR9/events`, {headers: {'Authorization': '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'}})
+    fetch(`https://api.github.com/users/MendozaR9/events`, {headers: {'Authorization': git_key}})
         .then(response => response.json())
         .then(data => {
             console.log(data)
